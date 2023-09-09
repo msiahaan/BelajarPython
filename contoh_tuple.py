@@ -9,4 +9,4 @@ print(blackpink_members)
 print(odd_numbers)
 print(blackpink_odd)
 
-blackpink_members[0] = "Yujin"
+blackpink_members[0] = "Yujin" #tried to change a blackpink member
