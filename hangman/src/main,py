@@ -1,6 +1,6 @@
-import hangman_lib as hl
+from hangman import HangMan
 
 if __name__ == "__main__":
-    man = hl.HangMan()
-    print(man.get_random_word())
+    my_man = HangMan()
+    my_man.run_game()
 

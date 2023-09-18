@@ -1,4 +1,5 @@
 import random
+import sys
 
 HANGMANPICS = ['''
   +---+
@@ -60,17 +61,30 @@ words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
          'stork swan tiger toad trout turkey turtle weasel whale wolf '
          'wombat zebra ').split()
 
-class HangMan(object):
+class HangMan:
     def __init__(self):
-        self.hangman_pics = HANGMANPICS
-        self.word_list = words
-        self.wordlist_len = len(self.word_list)
+      self.hangman_pics = HANGMANPICS
+      self.word_list = words
+      self.wordlist_len = len(self.word_list)
 
-    def get_random_word(self):
-        '''
-        This method return a random word
+    def _get_random_word(self):
+      ''' This method return a random word '''
+      idx = random.randint(0, self.wordlist_len - 1)
+      self.random_word = self.word_list[idx]
+    
+    def _get_guess(self):
+      '''This to get a guess.'''
+      print("Enter a guess character: ")
+      self.guess = input()
 
-        '''
-        idx = random.randint(0, self.wordlist_len - 1)
-        return self.word_list[idx]
+    def run_game(self):
+      self._get_random_word()
+      while True:
+        self._get_guess()
+        if self.guess in self.random_word:
+            print("Good!")
+        else:
+            sys.exit()
+                
+            
 
