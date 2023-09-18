@@ -1,7 +1,2 @@
 .vscode
-tebak_angka/Include
-tebak_angka/Scripts
-tebak_angka/Lib
-tebak_angka/pyvenv.cfg
-tebak_angka/src/tebak_angka/__pycache__
 */.venv
