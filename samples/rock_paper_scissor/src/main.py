@@ -13,13 +13,13 @@ def get_computer_choice():
 
 def determine_winner(user, computer):
     if user == computer:
-        return "It's a tie!"
+        return 0
     elif (user == "rock" and computer == "scissors") or \
          (user == "scissors" and computer == "paper") or \
          (user == "paper" and computer == "rock"):
-        return "You win!"
+        return 1
     else:
-        return "You lose!"
+        return -1
 
 def play_game():
     print("Welcome to Rock, Paper, Scissors!")
@@ -27,8 +27,20 @@ def play_game():
     computer_choice = get_computer_choice()
     print(f"You chose: {user_choice}")
     print(f"Computer chose: {computer_choice}")
-    result = determine_winner(user_choice, computer_choice)
-    print(result)
+    result= determine_winner(user_choice, computer_choice)
+    if result == 1:
+        print("You win!")
+    elif result == 1:
+        print("You lose!")
+    else:
+        print("It's a tie!")
+    total_score += result
+    print("Total score:", total_score)
 
 if __name__ == "__main__":
-    play_game()
+    continue_playing = True
+    while continue_playing:
+        play_game()
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        continue_playing = play_again == "yes"
+    print("Thanks for playing!")
