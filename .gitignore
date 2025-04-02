@@ -1,2 +1,3 @@
 .vscode
 .venv/*
+.samples/*/__pycache__/*
