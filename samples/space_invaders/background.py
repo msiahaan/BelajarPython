@@ -28,8 +28,9 @@ if __name__ == "__main__":
     # pygame setup
     pygame.init()
 
-    icon = pygame.image.load("ufo.png")
-    pygame.display.set_icon(icon)
+    # not sure why icon not displayed corectly, commented out
+    #icon = pygame.image.load("ufo.png")
+    #pygame.display.set_icon(icon)
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Space Invaders")
     
