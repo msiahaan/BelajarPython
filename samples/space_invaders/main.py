@@ -237,4 +237,6 @@ if __name__ == "__main__":
 		enemies.append(enemy)
 	
 	main_loop()
+
+	pygame.quit()
 	
