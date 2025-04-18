@@ -47,15 +47,15 @@ def main_loop():
 
         # RENDER YOUR GAME HERE
         # Player movement
-        #if player.x <= 0:
-        #    player.x = 0
-        #if player.x >= 736:
-        #    player.x = 736
+        if player.x <= 0:
+            player.x = 0
+        if player.x >= 736:
+            player.x = 736
 
-        #if player.y <= 0:
-        #    player.y = 0
-        #if player.y >= 536:
-        #    player.y = 536
+        if player.y <= 0:
+            player.y = 0
+        if player.y >= 536:
+            player.y = 536
 
         player.x += player.x_change
         player.y += player.y_change
