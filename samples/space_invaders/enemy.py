@@ -1,5 +1,5 @@
 import pygame
-
+import random
 
 class Player(object):
 	def __init__(self):
@@ -74,8 +74,19 @@ def main_loop():
         # draw the player
         draw_player(player.img, player.x, player.y)
 
-        # draw the alien
-        draw_alien(enemy.img, enemy.x, enemy.y)
+      
+        # Alien movement
+        for enemy in enemies:
+            if enemy.x <= 0:
+                enemy.x_change = 5
+                enemy.y += enemy.y_change
+            elif enemy.x >= 736:
+                enemy.x_change = -5
+                enemy.y += enemy.y_change
+            
+            enemy.x += enemy.x_change
+            #draw the alien
+            draw_alien(enemy.img, enemy.x, enemy.y)
 
         # update the display
         pygame.display.update()
@@ -98,6 +109,16 @@ if __name__ == "__main__":
     player = Player()
     # add enemy
     enemy = Alien()
+
+    num_of_enemies = 6
+    enemies = list() 
+
+    for i in range(num_of_enemies):
+        enemy = Alien()
+        enemy.x = random.randint(0, 735)
+        enemy.y = random.randint(50, 250)
+        enemies.append(enemy)
+          
     # main loop
     main_loop()
     pygame.quit()

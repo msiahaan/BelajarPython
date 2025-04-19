@@ -118,20 +118,20 @@ def main_loop():
 					
 		if (player.lives == 0):
 			bullet.state = "off"
-			player.y = 2000
+			player.y = 2000 # make the player invisible
 			for enemy in enemies:
-				enemy.y = 2000
+				enemy.y = 2000 # make the enemies invisible
 			game_over()
 
 	   	# Player movement
 		if player.x <= 0:
 			player.x = 0
-		if player.x >= 736:
+		if player.x >= 736: #set the limit of the player movement
 			player.x = 736
 
 		if player.y <= 0:
 			player.y = 0
-		if player.y >= 536:
+		if player.y >= 536: #set the limit of the player movement
 			player.y = 536
 
 		player.x += player.x_change
