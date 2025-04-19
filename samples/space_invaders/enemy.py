@@ -108,7 +108,7 @@ if __name__ == "__main__":
     # add player
     player = Player()
     # add enemy
-    enemy = Alien()
+    # enemy = Alien()
 
     num_of_enemies = 6
     enemies = list() 
